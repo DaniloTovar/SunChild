@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://ddaiirb8s15t4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_n0umg"]
+size = Vector3(100, 0.5, 100)
+
+[sub_resource type="BoxMesh" id="BoxMesh_pntc8"]
+size = Vector3(100, 0.5, 100)
+
+[sub_resource type="Gradient" id="Gradient_kmlu4"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_4dxy0"]
+gradient = SubResource("Gradient_kmlu4")
+width = 256
+height = 256
+fill_from = Vector2(0.1, 0.9)
+fill_to = Vector2(0.100719, 0.895683)
+repeat = 1
+metadata/_snap_count = 20
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xenv8"]
+albedo_color = Color(0.396078, 1, 1, 1)
+albedo_texture = SubResource("GradientTexture2D_4dxy0")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_n0umg")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("BoxMesh_pntc8")
+surface_material_override/0 = SubResource("StandardMaterial3D_xenv8")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.510618, 0.859808, 0, -0.859808, -0.510618, 0, 25.8418, -0.071701)
