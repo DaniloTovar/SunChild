@@ -14,6 +14,22 @@ config/name="SunChild"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
+[file_customization]
+
+folder_colors={
+"res://assets/": "orange",
+"res://resources/": "yellow",
+"res://scenes/": "green",
+"res://scripts/": "blue"
+}
+
+[importer_defaults]
+
+animation_library={
+"blender/animation/always_sample": false,
+"blender/animation/limit_playback": false
+}
+
 [input]
 
 move_forward={

@@ -1,0 +1,21 @@
+class_name PlayerState extends State
+
+## Movement states
+const IDLE = "Idle"
+const WALKING = "Walking"
+const RUNNING = "Running"
+const JUMPING = "Jumping"
+const FALLING = "Falling"
+
+## Combat states
+const ATTACKING = "Attacking"
+const DODGING = "Dodging"
+const DEFENDING = "Defending"
+
+var player: Player
+
+func _ready() -> void:
+	await owner.ready
+	player = owner as Player
+	assert(player != null, "The PlayerState state type must be used only in the player scene. It needs the owner to be a Player node.")
+	
